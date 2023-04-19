@@ -1,0 +1,23 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+/* Padrão de cores: 
+#fcfcfc
+#58a6db
+#71b3df
+#8bc1e3
+#a5cfe8
+ */
+body {
+    background-color: #fcfcfc;
+    
+}
+
+main {
+    background-color: #fcfcfc;
+    width: 500px;
+    margin: auto;
+    padding: 10px;
+    box-shadow: 3px, 3px, 5px rgba(0, 0, 0.473);
+}
