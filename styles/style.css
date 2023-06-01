@@ -1,6 +1,6 @@
 * {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
 }
 /* Padrão de cores: 
 #fcfcfc
@@ -10,40 +10,109 @@
 #a5cfe8
  */
 body {
-    background-color: #a5cfe8;
-    
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f7ff; /* Light blue background */
 }
 
 main {
-    background-color: #fcfcfc;
-    width: 500px;
-    margin: auto;
-    padding: 100px;
-    box-shadow: 3px 3px 5px rgba(0, 0, 0.473);
+  background-color: #fcfcfc;
+  width: 500px;
+  margin: auto;
+  padding: 100px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0.473);
 }
 
 h1 {
-    font-size: 2em;
-    color: #58a6db;
+  font-size: 2em;
+  color: #58a6db;
 }
 
 h2 {
-    font-size: 1.5em;
-    color: #71b3df;
+  font-size: 1.5em;
+  color: #71b3df;
 }
 
 img.lado {
-    float: right;
-    width: 100px;
+  float: right;
+  width: 100px;
 }
 
 a {
-    text-decoration: none;
-    font-weight: bold;
-    color: rgb(58, 0, 112);
+  text-decoration: none;
+  font-weight: bold;
+  color: rgb(58, 0, 112);
 }
 
 a:hover {
-    text-decoration: underline;
-    color: rgb(26, 26, 255);
+  text-decoration: underline;
+  color: rgb(26, 26, 255);
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+nav {
+  background-color: #e4f0ff; /* Light blue nav background */
+  padding: 10px;
+  text-align: center;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+.section {
+  padding: 50px;
+  background-color: #c4e1ff; /* Light blue section background */
+  text-align: center;
+  color: #333; /* Dark blue text color */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-in, transform 1s ease-in;
+}
+
+.section.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* CSS styles for the effects */
+.fade-in {
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+
+.fade-in.active {
+  opacity: 1;
+}
+
+/* CSS styles for the floating button */
+#scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 50%;
+  display: none;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+#scroll-to-top:hover {
+  background-color: #666;
 }

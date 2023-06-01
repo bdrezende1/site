@@ -1,33 +1,141 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bruno Rezende ©</title>
-    <link rel="stylesheet" href="styles/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
     <main>
-        <header>
-            <h1>Bruno Rezende</h1>
-            <img src="images/avatar01.png" alt="Avatar Bruno Rezende 01">
-        </header>
+      <header>
+        <h1>Bruno Rezende</h1>
+        <img src="images/avatar01.png" alt="Avatar Bruno Rezende 01" />
+      </header>
+      <nav>
+        <ul>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#social">Social</a></li>
+        </ul>
+      </nav>
+      <div id="portfolio" class="section portfolio">
         <article>
-            <h2>Artigo BIO 001</h2>
-            <img class="lado" src="images/avatar02.png" alt="Avatar Bruno Rezende 02">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio vitae animi veniam deleniti rem facilis, non quam ab ex adipisci maiores eum inventore eaque ut blanditiis in harum alias. Repellendus?</p>
-            <p><a href="https://github.com/brezende1">Acesse os projetos</a></p>
+          <h2>Artigo BIO 001</h2>
+          <img
+            class="lado"
+            src="images/avatar02.png"
+            alt="Avatar Bruno Rezende 02"
+          />
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio vitae
+            animi veniam deleniti rem facilis, non quam ab ex adipisci maiores
+            eum inventore eaque ut blanditiis in harum alias. Repellendus?
+          </p>
+          <p><a href="https://github.com/brezende1">Acesse os projetos</a></p>
         </article>
+      </div>
+      <div id="blog" class="section blog">
         <article>
-            <h2>Artigo BIO 002</h2>
-            <img class="lado" src="images/avatar03.png" alt="Avatar Bruno Rezende 03">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum, autem perspiciatis natus ex omnis quisquam distinctio tempora optio exercitationem officiis sapiente, est corrupti! Ex, illum. Non id assumenda voluptates aliquam.</p>
-            <p><a href="https://www.linkedin.com/in/bdrezende1/">Acesse as minhas redes</a></p>
+          <h2>Artigo BIO 002</h2>
+          <img
+            class="lado"
+            src="images/avatar03.png"
+            alt="Avatar Bruno Rezende 03"
+          />
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum,
+            autem perspiciatis natus ex omnis quisquam distinctio tempora optio
+            exercitationem officiis sapiente, est corrupti! Ex, illum. Non id
+            assumenda voluptates aliquam.
+          </p>
+          <p>
+            <a href="https://www.linkedin.com/in/bdrezende1/"
+              >Acesse as minhas redes</a
+            >
+          </p>
         </article>
+      </div>
+      <div id="social" class="section social">
         <article>
-            <a href="index.html"><img class="lado" src="images/btn_back.png" alt="Botão voltar"></a> 
+          <h2>Artigo BIO 002</h2>
+          <img
+            class="lado"
+            src="images/avatar03.png"
+            alt="Avatar Bruno Rezende 03"
+          />
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum,
+            autem perspiciatis natus ex omnis quisquam distinctio tempora optio
+            exercitationem officiis sapiente, est corrupti! Ex, illum. Non id
+            assumenda voluptates aliquam.
+          </p>
+          <p>
+            <a href="https://www.linkedin.com/in/bdrezende1/"
+              >Acesse as minhas redes</a
+            >
+          </p>
         </article>
+      </div>
+      <div id="scroll-to-top">
+        <article>
+          <a href="index.html"
+            ><img class="lado" src="images/btn_back.png" alt="Botão voltar"
+          /></a>
+        </article>
+      </div>
     </main>
-</body>
+    <script>
+      // JavaScript code for the effects
+      function revealSection(element) {
+        var windowHeight = window.innerHeight;
+        var sectionTop = element.getBoundingClientRect().top;
+        var sectionPoint = windowHeight - 100;
+
+        if (sectionTop < sectionPoint) {
+          element.classList.add("active");
+        }
+      }
+
+      function reveal() {
+        var sections = document.querySelectorAll(".section");
+
+        for (var i = 0; i < sections.length; i++) {
+          revealSection(sections[i]);
+        }
+      }
+
+      window.addEventListener("scroll", function () {
+        reveal();
+        toggleScrollToTopButton();
+      });
+
+      window.addEventListener("load", function () {
+        reveal();
+      });
+
+      // JavaScript code for the scroll-to-top button
+      var scrollToTopButton = document.getElementById("scroll-to-top");
+
+      function scrollToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      }
+
+      function toggleScrollToTopButton() {
+        if (window.pageYOffset > 300) {
+          scrollToTopButton.style.display = "block";
+        } else {
+          scrollToTopButton.style.display = "none";
+        }
+      }
+
+      scrollToTopButton.addEventListener("click", function () {
+        scrollToTop();
+      });
+    </script>
+  </body>
 </html>
