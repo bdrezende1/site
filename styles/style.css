@@ -51,7 +51,7 @@ a:hover {
 }
 
 header {
-  background-color: #333;
+  background-color: #fcfcfc;
   color: #fff;
   padding: 20px;
   text-align: center;
@@ -80,8 +80,8 @@ nav ul li {
   text-align: center;
   color: #333; /* Dark blue text color */
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 1s ease-in, transform 1s ease-in;
+  transform: translateY(50px);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 }
 
 .section.active {
@@ -92,20 +92,17 @@ nav ul li {
 /* CSS styles for the effects */
 .fade-in {
   opacity: 0;
-  transition: opacity 1s ease-in;
+  transition: opacity 1s ease-in-out;
 }
 
 .fade-in.active {
   opacity: 1;
 }
 
-/* CSS styles for the floating button */
-#scroll-to-top {
+/* CSS styles for the floating buttons */
+.floating-button {
   position: fixed;
   bottom: 20px;
-  right: 20px;
-  background-color: #333;
-  color: #fff;
   padding: 10px 20px;
   border-radius: 50%;
   display: none;
@@ -113,6 +110,22 @@ nav ul li {
   z-index: 9999;
 }
 
+#scroll-to-top {
+  right: 20px;
+  background-color: #333;
+  color: #fff;
+}
+
 #scroll-to-top:hover {
+  background-color: #666;
+}
+
+#scroll-to-bottom {
+  left: 20px;
+  background-color: #333;
+  color: #fff;
+}
+
+#scroll-to-bottom:hover {
   background-color: #666;
 }

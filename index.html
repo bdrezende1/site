@@ -22,7 +22,7 @@
       </nav>
       <div id="portfolio" class="section portfolio">
         <article>
-          <h2>Artigo BIO 001</h2>
+          <h2>Portfolio</h2>
           <img
             class="lado"
             src="images/avatar02.png"
@@ -38,7 +38,7 @@
       </div>
       <div id="blog" class="section blog">
         <article>
-          <h2>Artigo BIO 002</h2>
+          <h2>Blog</h2>
           <img
             class="lado"
             src="images/avatar03.png"
@@ -59,7 +59,7 @@
       </div>
       <div id="social" class="section social">
         <article>
-          <h2>Artigo BIO 002</h2>
+          <h2>Social Media</h2>
           <img
             class="lado"
             src="images/avatar03.png"
@@ -78,13 +78,14 @@
           </p>
         </article>
       </div>
-      <div id="scroll-to-top">
+      <div id="scroll-to-top" class="floating-button">
         <article>
           <a href="index.html"
             ><img class="lado" src="images/btn_back.png" alt="Botão voltar"
           /></a>
         </article>
       </div>
+      
     </main>
     <script>
       // JavaScript code for the effects
@@ -108,15 +109,16 @@
 
       window.addEventListener("scroll", function () {
         reveal();
-        toggleScrollToTopButton();
+        toggleScrollButtons();
       });
 
       window.addEventListener("load", function () {
         reveal();
       });
 
-      // JavaScript code for the scroll-to-top button
+      // JavaScript code for the scroll buttons
       var scrollToTopButton = document.getElementById("scroll-to-top");
+      var scrollToBottomButton = document.getElementById("scroll-to-bottom");
 
       function scrollToTop() {
         window.scrollTo({
@@ -125,16 +127,36 @@
         });
       }
 
-      function toggleScrollToTopButton() {
+      function scrollToBottom() {
+        window.scrollTo({
+          top: document.body.scrollHeight,
+          behavior: "smooth",
+        });
+      }
+
+      function toggleScrollButtons() {
         if (window.pageYOffset > 300) {
           scrollToTopButton.style.display = "block";
         } else {
           scrollToTopButton.style.display = "none";
         }
+
+        if (
+          window.innerHeight + window.pageYOffset >=
+          document.body.scrollHeight - 300
+        ) {
+          scrollToBottomButton.style.display = "none";
+        } else {
+          scrollToBottomButton.style.display = "block";
+        }
       }
 
       scrollToTopButton.addEventListener("click", function () {
         scrollToTop();
+      });
+
+      scrollToBottomButton.addEventListener("click", function () {
+        scrollToBottom();
       });
     </script>
   </body>
